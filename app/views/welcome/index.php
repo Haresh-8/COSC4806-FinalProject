@@ -2,7 +2,7 @@
 
 <style>
     body {
-        background: url('/public/images/cinema-bg.jpg') no-repeat center center/cover;
+        background: url(app/views/welcome/Movie Review logo.png) no-repeat center center/cover;
         min-height: 100vh;
     }
 
