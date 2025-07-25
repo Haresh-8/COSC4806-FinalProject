@@ -28,4 +28,14 @@ class Create extends Controller {
             $userModel->register($username, $password);
         }
     }
+  public function guest() {
+      // Create a temporary guest session
+      $_SESSION['auth'] = true;
+      $_SESSION['user_id'] = null; 
+      $_SESSION['username'] = "Guest";
+
+      // Redirect to home page
+      header("Location: /");
+      exit;
+  }
 }
