@@ -1,10 +1,27 @@
 <?php require_once 'app/views/templates/header.php'; ?>
 
 <div class="container my-5" style="max-width: 600px;">
- 
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/home"><i class="bi bi-house"></i> Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Search Movie</li>
+        </ol>
+    </nav>
+
     <h2 class="mb-4 text-primary">Search Movie</h2>
 
-    
+    <!-- Alerts -->
+    <?php if (!empty($data['error'])): ?>
+        <div id="alertBox" class="alert alert-danger">
+            <?= htmlspecialchars($data['error']); ?>
+        </div>
+    <?php elseif (!empty($data['success'])): ?>
+        <div id="alertBox" class="alert alert-success">
+            <?= htmlspecialchars($data['success']); ?>
+        </div>
+    <?php endif; ?>
+
     <!-- Search Form -->
     <form method="post" action="/movie/search" class="card shadow-sm p-4">
         <div class="mb-3 d-flex align-items-center">
